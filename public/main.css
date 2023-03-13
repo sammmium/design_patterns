@@ -1,0 +1,45 @@
+#form > div {
+    display: flex;
+    margin: 5px;
+}
+#form > div > label {
+    width: 166px;
+    text-align: right;
+    padding: 5px;
+}
+#form > div > select {
+    width: 250px;
+}
+#form > div > input {
+    width: 242px;
+}
+#form > div > button {
+    margin-left: 176px;
+    width: 250px;
+    padding: 5px 0;
+}
+#form > div > button:hover {
+    background: greenyellow;
+}
+div.value {
+    width: 250px;
+    padding: 5px;
+}
+#form div.link {
+    display: flex;
+    margin-top: 20px;
+}
+div.link div {
+    margin-left: 180px;
+}
+div.link div a {
+    padding: 5px 25px;
+    width: 250px;
+    border: 1px solid gray;
+    background: gainsboro;
+    text-decoration: none;
+    border-radius: 3px;
+}
+div.link div a:hover {
+    background: greenyellow;
+}

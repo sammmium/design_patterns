@@ -1,0 +1,8 @@
+index:
+    path: /
+    controller: App\Controller\DefaultController::index
+
+product_show:
+    path: /product-show
+    controller: App\Controller\DefaultController::show
+    methods: POST
