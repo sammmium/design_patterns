@@ -2,96 +2,20 @@
 
 namespace App\Controller;
 
-use App\Entity\Form;
-use App\Entity\Taxes;
-use App\Repository\ProductsRepository;
-use App\Repository\TaxesRepository;
-use Symfony\Component\HttpFoundation\Request;
-use Symfony\Bridge\Doctrine\ManagerRegistry;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\Response;
-use App\Entity\Products;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\IntegerType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
-use Doctrine\ORM\EntityManagerInterface;
-use Symfony\Component\Validator\Validator\ValidatorInterface;
+use App\Repository\LoggerTrait;
+use Psr\Log\LoggerInterface;
 
-class DefaultController extends AbstractController
+class DefaultController extends MainController
 {
-	public function index(EntityManagerInterface $doctrine)
+	use LoggerTrait;
+
+	public function index()
 	{
-		$productForm = new Form();
-
-		$choices = [
-			'Выберите продукт' => 0
-		];
-
-		$products = $doctrine->getRepository(Products::class)
-			->findAll();
-
-		if (!empty($products)) {
-			foreach ($products as $product) {
-				$choices[$product->getName()] = $product->getId();
-			}
-		}
-
-		$form = $this->createFormBuilder($productForm)
-			->setMethod('post')
-			->setAction($this->generateUrl('product_show'))
-			->add('name', ChoiceType::class, [
-				'choices' => $choices,
-				'label' => 'Наименование'
-			])
-			->add('tax', TextType::class, [
-				'label' => 'TAX код'
-			])
-			->add('save', SubmitType::class, [
-				'label' => 'Расчитать стоимость'
-			])
-			->getForm();
+		$this->logger->debug('test info message');
 
 		return $this->render('index.html.twig', [
-			'page_title' => 'Выбор продукта',
-			'form' => $form->createView(),
+			'page_title' => self::PAGE_TITLE,
+			'patterns' => self::getMenuPatterns()
 		]);
-	}
-
-	public function show(Request $request, EntityManagerInterface $doctrine)
-	{
-		try {
-			$form = $request->request->get('form');
-
-			$prefix = substr($form['tax'], 0, 2);
-
-			$taxValue = $doctrine->getRepository(Taxes::class)
-				->findTaxValue($prefix);
-
-			$product = $doctrine->getRepository(Products::class)
-				->find($form['name']);
-			if (empty($product)) {
-				return $this->redirect('/');
-			}
-
-			$preparedCost = $this->getPreparedCost($product->getCost(), $taxValue) . ' USD';
-
-			$data = [
-				'page_title' => 'Результат',
-				'name' => $product->getName(),
-				'cost' => $preparedCost
-			];
-
-			return $this->render('report.html.twig', $data);
-		} catch (\Exception $exception) {
-			return $this->redirect('/');
-		}
-	}
-
-	private function getPreparedCost(int $cost, int $taxValue): string
-	{
-		$result = ($cost + (($cost / 100) * $taxValue)) / 100;
-		return number_format($result, 2, ',', '');
 	}
 }

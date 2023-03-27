@@ -1,0 +1,45 @@
+<?php
+
+namespace App\Controller;
+
+use App\Repository\PropertyContainer\PropertyContainerSecond;
+use App\Repository\PropertyContainer\ProreptyContainer;
+
+class PropertyContainerController extends MainController
+{
+	private $key = 'property_container';
+
+	protected $description = 'sdfsdf';
+
+	public function index()
+	{
+		$item = new ProreptyContainer();
+		$item->setTitle('Тест контейнера');
+		$item->setType('Обычный тест');
+
+		$item->addProperty('name', 'Расширение');
+		$old = $item->getProperty('name');
+		$new = $old . ' сферы влияния';
+		$item->updateProperty('name', $new);
+
+		$result = $item->getData();
+
+		$itemSecond = new PropertyContainerSecond();
+		$itemSecond->setStep('zwei');
+		$itemSecond->setSphere('gesundheit');
+
+		$itemSecond->addProperty('group', 'doppel');
+		$itemSecond->addProperty('group_zwei', 'doppel herz');
+		$itemSecond->deleteProperty('group_zwei');
+
+		$itemSecond->updateProperty('group', 'Tumba Yumba');
+
+		$result = array_merge($result, $itemSecond->getData());
+
+		return $this->render('property_container/index.html.twig', [
+			'page_title' => self::getPatternName($this->key),
+			'description' => $this->getDescription(),
+			'item' => $result
+		]);
+	}
+}

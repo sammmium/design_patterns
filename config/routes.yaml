@@ -2,7 +2,10 @@ index:
     path: /
     controller: App\Controller\DefaultController::index
 
-product_show:
-    path: /product-show
-    controller: App\Controller\DefaultController::show
-    methods: POST
+property_container_index:
+    path: /property_container/index
+    controller: App\Controller\PropertyContainerController::index
+
+delegation_index:
+    path: /delegation/index
+    controller: App\Controller\DelegationController::index
