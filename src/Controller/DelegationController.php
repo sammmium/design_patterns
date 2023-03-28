@@ -12,14 +12,8 @@ class DelegationController extends MainController
 
 	protected $description = 'Делегирование (англ. Delegation) — основной шаблон проектирования, в котором объект внешне выражает некоторое поведение, но в реальности передаёт ответственность за выполнение этого поведения связанному объекту. Шаблон делегирования является фундаментальной абстракцией, на основе которой реализованы другие шаблоны - композиция (также называемая агрегацией), примеси (mixins) и аспекты (aspects).';
 
-//	use LoggerTrait;
-	use LoggerAwareTrait;
-
 	public function index()
 	{
-		$result = ['log'];
-		$this->logger->error('test message log');
-
 		$item = new AppMessenger();
 		$item->setSender('sender@mail.ru')
 			->setRecipient('sam-tanik@mail.ru')
@@ -35,10 +29,11 @@ class DelegationController extends MainController
 		dd($item);
 
 
-		return $this->render('property_container/index.html.twig', [
+		return $this->render('item.html.twig', [
 			'page_title' => self::PAGE_TITLE,
+			'name' => self::getPatternName($this->key),
 			'description' => $this->description,
-			'item' => $result
+			'item' => $item
 		]);
 	}
 }

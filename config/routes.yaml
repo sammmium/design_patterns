@@ -9,3 +9,7 @@ property_container_index:
 delegation_index:
     path: /delegation/index
     controller: App\Controller\DelegationController::index
+
+event_channel:
+    path: /event_channel/index
+    controller: App\Controller\EventChannelController::index

@@ -12,6 +12,7 @@ class MainController extends AbstractController
 	protected static $patterns = [
 		'property_container' => 'Контейнер свойств',
 		'delegation' => 'Делегирование',
+		'event_channel' => 'Канал событий',
 	];
 
 	protected static function getMenuPatterns(): array
