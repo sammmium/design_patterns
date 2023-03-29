@@ -11,7 +11,9 @@ class EventChannelController extends MainController
 {
 	private $key = 'event_channel';
 
-	protected $description = 'Канал событий (англ. event channel) — фундаментальный шаблон проектирования, благодаря которому мы можем создать гибкую систему уведомлений с подписками.';
+	private $description = 'Канал событий (англ. event channel) — фундаментальный шаблон проектирования, благодаря которому мы можем создать гибкую систему уведомлений с подписками.';
+
+	private $link = '';
 
 	use LoggerTrait;
 
@@ -52,6 +54,7 @@ class EventChannelController extends MainController
 			'page_title' => self::PAGE_TITLE,
 			'name' => self::getPatternName($this->key),
 			'description' => $this->description,
+			'link' => $this->link,
 			'item' => $item
 		]);
 	}

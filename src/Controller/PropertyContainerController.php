@@ -9,7 +9,9 @@ class PropertyContainerController extends MainController
 {
 	private $key = 'property_container';
 
-	protected $description = 'Фундаментальный шаблон проектирования';
+	private $description = 'Фундаментальный шаблон проектирования';
+
+	private $link = '';
 
 	public function index()
 	{
@@ -37,9 +39,10 @@ class PropertyContainerController extends MainController
 		$result = array_merge($result, $itemSecond->getData());
 
 		return $this->render('item.html.twig', [
-			'page_title' => self::getPatternName($this->key),
+			'page_title' => self::PAGE_TITLE,
 			'name' => self::getPatternName($this->key),
 			'description' => $this->getDescription(),
+			'link' => $this->link,
 			'item' => $result
 		]);
 	}

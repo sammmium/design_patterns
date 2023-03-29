@@ -13,3 +13,7 @@ delegation_index:
 event_channel:
     path: /event_channel/index
     controller: App\Controller\EventChannelController::index
+
+abstract_factory:
+    path: /abstract_factory/index
+    controller: App\Controller\AbstractFactoryController::index

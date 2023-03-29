@@ -13,6 +13,7 @@ class MainController extends AbstractController
 		'property_container' => 'Контейнер свойств',
 		'delegation' => 'Делегирование',
 		'event_channel' => 'Канал событий',
+		'abstract_factory' => 'Абстрактная фабрика',
 	];
 
 	protected static function getMenuPatterns(): array
