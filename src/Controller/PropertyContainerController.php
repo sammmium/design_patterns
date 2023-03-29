@@ -11,7 +11,7 @@ class PropertyContainerController extends MainController
 
 	private $description = 'Фундаментальный шаблон проектирования';
 
-	private $link = '';
+	private $link = 'https://www.youtube.com/watch?v=uVWPusUe3Aw&list=PLoonZ8wII66hKbEvIVAZnp1h4CE-4Mtk4&index=2';
 
 	public function index()
 	{

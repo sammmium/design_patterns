@@ -12,7 +12,7 @@ class DelegationController extends MainController
 
 	private $description = 'Делегирование (англ. Delegation) — основной шаблон проектирования, в котором объект внешне выражает некоторое поведение, но в реальности передаёт ответственность за выполнение этого поведения связанному объекту. Шаблон делегирования является фундаментальной абстракцией, на основе которой реализованы другие шаблоны - композиция (также называемая агрегацией), примеси (mixins) и аспекты (aspects).';
 
-	private $link = '';
+	private $link = 'https://www.youtube.com/watch?v=uxbmNi6XPxE&list=PLoonZ8wII66hKbEvIVAZnp1h4CE-4Mtk4&index=3';
 
 	public function index()
 	{

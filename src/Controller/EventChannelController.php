@@ -13,7 +13,7 @@ class EventChannelController extends MainController
 
 	private $description = 'Канал событий (англ. event channel) — фундаментальный шаблон проектирования, благодаря которому мы можем создать гибкую систему уведомлений с подписками.';
 
-	private $link = '';
+	private $link = 'https://www.youtube.com/watch?v=xKB2OqxF_t0&list=PLoonZ8wII66hKbEvIVAZnp1h4CE-4Mtk4&index=4';
 
 	use LoggerTrait;
 
