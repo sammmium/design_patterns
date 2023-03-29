@@ -1,0 +1,10 @@
+# config/packages/dev/monolog.yaml
+monolog:
+    handlers:
+        main:
+            type:  rotating_file
+            path:  '%kernel.logs_dir%/%kernel.environment%.log'
+            level: warning
+            # максимальное количество хранящихся файлов логов
+            # по умолчанию равняется нулю, что означает бесконечное количество
+            max_files: 10
