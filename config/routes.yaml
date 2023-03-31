@@ -17,3 +17,7 @@ event_channel:
 abstract_factory:
     path: /abstract_factory/index
     controller: App\Controller\AbstractFactoryController::index
+
+fabric_method:
+    path: /fabric_method/index
+    controller: App\Controller\FabricMethodController::index
