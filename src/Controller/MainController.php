@@ -15,6 +15,7 @@ class MainController extends AbstractController
 		'event_channel' => 'Канал событий',
 		'abstract_factory' => 'Абстрактная фабрика',
 		'fabric_method' => 'Фабричный метод',
+		'static_factory' => 'Статическая фабрика',
 	];
 
 	protected static function getMenuPatterns(): array

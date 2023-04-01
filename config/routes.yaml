@@ -21,3 +21,7 @@ abstract_factory:
 fabric_method:
     path: /fabric_method/index
     controller: App\Controller\FabricMethodController::index
+
+static_factory:
+    path: /static_factory/index
+    controller: App\Controller\StaticFactoryController::index

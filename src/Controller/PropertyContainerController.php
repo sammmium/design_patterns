@@ -41,7 +41,7 @@ class PropertyContainerController extends MainController
 		return $this->render('item.html.twig', [
 			'page_title' => self::PAGE_TITLE,
 			'name' => self::getPatternName($this->key),
-			'description' => $this->getDescription(),
+			'description' => $this->description,
 			'link' => $this->link,
 			'item' => $result
 		]);
