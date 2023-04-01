@@ -25,3 +25,7 @@ fabric_method:
 static_factory:
     path: /static_factory/index
     controller: App\Controller\StaticFactoryController::index
+
+simple_factory:
+    path: /simple_factory/index
+    controller: App\Controller\SimpleFactoryController::index

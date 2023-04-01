@@ -16,6 +16,7 @@ class MainController extends AbstractController
 		'abstract_factory' => 'Абстрактная фабрика',
 		'fabric_method' => 'Фабричный метод',
 		'static_factory' => 'Статическая фабрика',
+		'simple_factory' => 'Простая фабрика',
 	];
 
 	protected static function getMenuPatterns(): array
