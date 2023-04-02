@@ -29,3 +29,7 @@ static_factory:
 simple_factory:
     path: /simple_factory/index
     controller: App\Controller\SimpleFactoryController::index
+
+singleton:
+    path: /singleton/index
+    controller: App\Controller\SingletonController::index
