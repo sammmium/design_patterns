@@ -33,3 +33,7 @@ simple_factory:
 singleton:
     path: /singleton/index
     controller: App\Controller\SingletonController::index
+
+strategy:
+    path: /strategy/index
+    controller: App\Controller\StrategyController::index
