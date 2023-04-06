@@ -1,0 +1,51 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+.phpunit.result.cache
+###< phpunit/phpunit ###
+
+###> symfony/phpunit-bridge ###
+.phpunit.result.cache
+/phpunit.xml
+###< symfony/phpunit-bridge ###
+.env.test
+.env
+bin/console
+tests/bootstrap.php
+symfony.lock
+phpunit.xml.dist
+docker-compose.yml
+docker-compose.override.yml
+config/services.yaml
+config/routes/web_profiler.yaml
+config/routes/framework.yaml
+config/routes/annotations.yaml
+config/preload.php
+config/packages/web_profiler.yaml
+config/packages/validator.yaml
+config/packages/twig.yaml
+config/packages/translation.yaml
+config/packages/sensio_framework_extra.yaml
+config/packages/security.yaml
+config/packages/routing.yaml
+config/packages/notifier.yaml
+config/packages/messenger.yaml
+config/packages/mailer.yaml
+config/packages/framework.yaml
+config/packages/doctrine_migrations.yaml
+config/packages/doctrine.yaml
+config/packages/debug.yaml
+config/packages/cache.yaml
+config/bundles.php
+composer.lock
+bin/phpunit
