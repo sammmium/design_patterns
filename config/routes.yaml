@@ -37,3 +37,7 @@ singleton:
 strategy:
     path: /strategy/index
     controller: App\Controller\StrategyController::index
+
+multitone:
+    path: /multitone/index
+    controller: App\Controller\MultitoneController::index
