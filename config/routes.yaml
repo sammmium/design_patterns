@@ -45,3 +45,7 @@ multitone:
 builder:
     path: /builder/index
     controller: App\Controller\BuilderController::index
+
+lazy_load:
+    path: /lazy_load/index
+    controller: App\Controller\LazyLoadController::index

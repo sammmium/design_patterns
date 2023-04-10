@@ -21,7 +21,7 @@ class MainController extends AbstractController
 		'strategy' => 'Стратегия',
 		'multitone' => 'Пул одиночек',
 		'builder' => 'Строитель',
-		
+		'lazy_load' => 'Ленивая загрузка',
 	];
 
 	protected static function getMenuPatterns(): array
