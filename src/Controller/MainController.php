@@ -20,6 +20,7 @@ class MainController extends AbstractController
 		'singleton' => 'Одиночка',
 		'strategy' => 'Стратегия',
 		'multitone' => 'Пул одиночек',
+		'builder' => 'Строитель',
 		
 	];
 
